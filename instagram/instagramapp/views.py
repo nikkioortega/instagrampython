@@ -1,5 +1,5 @@
 from django.shortcuts import render
 
 # Create your views here.
-def registrar ( request ):
-        return render( request, 'registro.html')
+def index ( request ):
+        return render(request,'Rigistro.html')

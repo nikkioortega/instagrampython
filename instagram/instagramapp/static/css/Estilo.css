@@ -1,0 +1,20 @@
+#formulario{
+    border-style: ridge;
+    widt: auto;
+    text-align:right;
+  }
+  #imagenes{
+    text-align: center;
+    }
+  #Img1{
+  height:  auto;
+  width: 140px;
+  border-radius: auto;
+  <!--border-radius:es para redondiar la foto-->
+  <!-- px es pixceles-->
+}
+#Img2{
+  height: auto;
+  width: 120px;
+  border-radius: auto;
+}
