@@ -10,11 +10,15 @@
   height:  auto;
   width: 140px;
   border-radius: auto;
-  <!--border-radius:es para redondiar la foto-->
-  <!-- px es pixceles-->
+  //border-radius:es para redondiar la foto
+  //px es pixceles
 }
 #Img2{
   height: auto;
   width: 120px;
   border-radius: auto;
+}
+
+.aux{
+  padding: 10px 0;
 }
