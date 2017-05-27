@@ -9,7 +9,7 @@
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-  <link rel="stylesheet" type="text/css" href="{% 'static css/Estilo.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/Estilo.css' %}">
 <!--<link rel="stylesheet" type="text/css" href="theme.css"> para el tamaño de la imagen-->
 </head>
 <body>
@@ -22,26 +22,32 @@
     <font color="grey"><b>Regístrate para ver fotos y vídeos de tus amigos<b></font>
     <a href="#" class="btn btn-primary"> Iniciar sesíon con Facebook </a>
     <p class="card-text">
-    <div class= "form-group">
-      <input class= "form-control" type="text" placeholder="Numero móvil o correo electrónico"name="email">
-    </div>
-    <div class= "form-group">
-      <input class= "form-control" type="text" placeholder="Nombre completo" name="name">
-    </div>
-    <div class= "form-group">
-      <input class= "form-control" type="text" placeholder="Nombre de usuario" name="username">
-    </div>
-    <div class= "form-group">
-      <input class= "form-control" type="password" placeholder="Contraseña" name="password">
-    </div>
-    <a href="#" class="btn btn-primary">              Registrarse                  </a>
-    <font color="grey">- Al registrarte, aceptas nuestras <b><b></font>
+    <form action='{% url 'crear_usuario' %}' method="post">
+      {% csrf_token %}
+      <div class= "form-group">
+        <input class= "form-control" type="text" placeholder="Numero móvil o correo electrónico"name="email">
+      </div>
+      <div class= "form-group">
+        <input class= "form-control" type="text" placeholder="Nombre completo" name="name">
+      </div>
+      <div class= "form-group">
+        <input class= "form-control" type="text" placeholder="Nombre de usuario" name="username">
+      </div>
+      <div class= "form-group">
+        <input class= "form-control" type="password" placeholder="Contraseña" name="password">
+      </div>
+      <button class="btn btn-primary">Registrarse</button><br><br>
+    </form>
+    <font color="grey"> Al registrarte, aceptas nuestras
+      Condiciones y nuestra Politica de privacidad.</font><br>
   </div>
   <center>
+    <div class="card" style="width: 20rem;">
     <div class="aux">
       ¿Tienes una cuenta?
       <a id="link" href="{% url 'login' %}">Entrar</a>
     </div>
+  </div>
 
   </center>
   </div>

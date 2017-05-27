@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,31 +9,33 @@
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-  <link rel="stylesheet" type="text/css" href="CSS/Estilo.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/Estilo.css' %}">
 <!--<link rel="stylesheet" type="text/css" href="theme.css"> para el tamaño de la imagen-->
 </head>
 <body>
 
   <center>
-
-  <div class="card" style="width: 20rem;">
-  <div class="card-block">
-    <h4 class="card-title">Bienvenido a Instagram</h4>
-    <p class="card-text">
-    <div class= "form-group">
-      <input class= "form-control" type="text" placeholder="Usuario">
-    </div>
-    <div class= "form-group">
-      <input class= "form-control" type="password" placeholder="Contraseña">
-    </div>
-    <a href="#" class="btn btn-primary">Entrar</a>
-  </div>
-  </div>
+  <form action='{% url 'login' %}' method="post">
+    {% csrf_token %}
+   <div class="card" style="width: 20rem;">
+   <div class="card-block">
+     <h4 class="card-title">Bienvenido a Instagram</h4>
+     <p class="card-text">
+     <div class= "form-group">
+       <input class= "form-control" name= 'username' type="text" placeholder="Usuario">
+     </div>
+     <div class= "form-group">
+       <input class= "form-control" name= 'password' type="password" placeholder="Contraseña">
+     </div>
+     <button class="btn btn-primary">Entrar</button>
+   </div>
+   </div>
   <div class= "form-control" id="formulario" style="width: 20rem;">
     <!-- Contextual button for informational alert messages -->
     ¿No tienes una cuenta?
-    <a href="file:///Users/centroatico/Documents/Nicole%20Ortega%20Sabbag/Rigistro.html">Registrate</a>
+    <a id="link" href="{% url 'index' %}">Registrate</a>
   </div>
+  <form>
   <font color="gr">
   Descarga la aplicación
   </center>
@@ -40,9 +43,9 @@
 <center>
 
   <div id="imagenes">
-    <img src="Imagenes/Apple.png" class="img-fluid" id="Img1" alt="Responsive image1">
-    <img src="Imagenes/Googleplay.png" class="img-fluid" id="Img2" alt="Responsive image2"><br>
-  <div>
+    <img src="{% static 'img/apple.png' %}" class="img-fluid" id="Img1" alt="Responsive image1">
+    <img src="{% static 'img/googleplay.png' %}" class="img-fluid" id="Img2" alt="Responsive image2"><br>
+  </div>
 
   </center>
 </body>
