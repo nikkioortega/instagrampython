@@ -17,7 +17,7 @@
   <center>
   <form action='{% url 'login' %}' method="post">
     {% csrf_token %}
-   <div class="card" style="width: 20rem;">
+  <div class="card" style="width: 20rem;">
    <div class="card-block">
      <h4 class="card-title">Bienvenido a Instagram</h4>
      <p class="card-text">
@@ -30,12 +30,13 @@
      <button class="btn btn-primary">Entrar</button>
    </div>
    </div>
+  </form>
   <div class= "form-control" id="formulario" style="width: 20rem;">
     <!-- Contextual button for informational alert messages -->
     ¿No tienes una cuenta?
+    <div class="d-flex p-2">I'm a flexbox container!</div>
     <a id="link" href="{% url 'index' %}">Registrate</a>
   </div>
-  <form>
   <font color="gr">
   Descarga la aplicación
   </center>
