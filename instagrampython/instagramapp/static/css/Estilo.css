@@ -22,3 +22,12 @@
 .aux{
   padding: 10px 0;
 }
+
+@font-face {
+    font-family: "Billabong";
+    src: url('../ttf/Billabong.ttf') format("truetype");
+}
+#fuente{
+    font-family: "Billabong";
+    font-size: 50px;
+}

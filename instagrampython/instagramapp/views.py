@@ -26,3 +26,17 @@ def crear_usuario ( request ):
 @login_required
 def home (request):
     return render(request,'home.html')
+
+@login_required
+def uploadfile(request):
+    curr_user = request.username
+    post_user = post.objects.filter(creator = curr_user),count();
+    media_file= request.FILES['photo'];
+    newNameFile = curr_user.username + "-" + str(curr_userd.id) + "-" + str(post_user);
+    fs = FileSystemStorage()
+    filename = fs.save(newNameFile, mediaFile)
+    uploaded_file_url = fs.url(filename)
+    photo = uploaded_file_url;
+    description = request.POST[ 'description' ];
+    newPost = Post ( foto = photo, descripcion = description, user_id = curr_user );
+    newPost = Post( foto = phot; description )

@@ -18,7 +18,7 @@
 
   <div class="card" style="width: 20rem;">
   <div class="card-block">
-    <billabong class="card-title">Instagram</billabong><br>
+    <p class="card-title" id="fuente">Instagram</p><br>
     <font color="grey"><b>Regístrate para ver fotos y vídeos de tus amigos<b></font>
     <a href="#" class="btn btn-primary"> Iniciar sesíon con Facebook </a>
     <p class="card-text">
@@ -44,7 +44,7 @@
       </font>
   </div>
   <center>
-    <div class="card" style="width: 20rem;"><br>
+    <div class="card" style="width: 20rem;">
     <div class="aux">
       ¿Tienes una cuenta?
       <a id="link" href="{% url 'login' %}">Entrar</a>
@@ -52,7 +52,12 @@
   </div>
 
   </center>
+  
   </div>
+  <div id = "imagenes">
+    <img src="{% static 'img/iphone.png' %}" class="img-fluid" id="Img3" alt="Responsive image3">
+    <div/>
+
 
 
 <p class="font-weight-bold">Descarga la aplicación.</p>
